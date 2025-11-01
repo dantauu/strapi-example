@@ -1,15 +1,15 @@
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from "@strapi/strapi";
 
-module.exports = createCoreController('api::page.page', ({ strapi }) => ({
+export default factories.createCoreController('api::page.page', ({ strapi }) => ({
     async findBySlug(ctx) {
         const { slug } = ctx.params;
 
         const page = await strapi.db.query('api::page.page').findOne({
-            where: { title: slug },
+            where: { title:  slug},
             populate: ['seo']
         });
 
-        if (!page) return ctx.notFound(`Page "${slug}" not found`);
+        if (!page) return ctx.notFound('Page not found');
         return page;
     },
 }));
