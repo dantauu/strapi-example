@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_contacts",
+  "info": {
+    "displayName": "contact"
+  },
+  "options": {},
+  "attributes": {
+    "whatsapp": {
+      "type": "string"
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "viber": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

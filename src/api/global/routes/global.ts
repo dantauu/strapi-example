@@ -1,7 +1,10 @@
-/**
- * global router.
- */
-
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreRouter('api::global.global');
+module.exports = {
+    routes: [
+        {
+            method: 'GET',
+            path: '/global',
+            handler: 'global.find',
+            config: { auth: false },
+        }
+    ]
+}

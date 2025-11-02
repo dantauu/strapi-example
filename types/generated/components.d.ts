@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CommonGlobal extends Struct.ComponentSchema {
+  collectionName: 'components_common_globals';
+  info: {
+    displayName: 'global';
+  };
+  attributes: {
+    contact: Schema.Attribute.Component<'global.contact', true>;
+    phoneNumber: Schema.Attribute.String;
+    workingHours: Schema.Attribute.Component<'global.working-hours', true>;
+  };
+}
+
 export interface CommonSeo extends Struct.ComponentSchema {
   collectionName: 'components_common_seos';
   info: {
@@ -8,6 +20,30 @@ export interface CommonSeo extends Struct.ComponentSchema {
   attributes: {
     metaDescription: Schema.Attribute.Text;
     metaTitle: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalContact extends Struct.ComponentSchema {
+  collectionName: 'components_global_contacts';
+  info: {
+    displayName: 'contact';
+  };
+  attributes: {
+    telegram: Schema.Attribute.String;
+    viber: Schema.Attribute.String;
+    whatsapp: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalWorkingHours extends Struct.ComponentSchema {
+  collectionName: 'components_global_working_hours';
+  info: {
+    displayName: 'working-hours';
+    icon: 'briefcase';
+  };
+  attributes: {
+    from: Schema.Attribute.String;
+    to: Schema.Attribute.String;
   };
 }
 
@@ -76,7 +112,10 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'common.global': CommonGlobal;
       'common.seo': CommonSeo;
+      'global.contact': GlobalContact;
+      'global.working-hours': GlobalWorkingHours;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

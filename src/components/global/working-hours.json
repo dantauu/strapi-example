@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_global_working_hours",
+  "info": {
+    "displayName": "working-hours",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

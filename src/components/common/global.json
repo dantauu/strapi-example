@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_common_globals",
+  "info": {
+    "displayName": "global"
+  },
+  "options": {},
+  "attributes": {
+    "phoneNumber": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "component",
+      "component": "global.contact",
+      "repeatable": true
+    },
+    "workingHours": {
+      "type": "component",
+      "component": "global.working-hours",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
